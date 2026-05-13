@@ -14,29 +14,18 @@
             --aurora-glow: rgba(123, 44, 191, 0.4);
             --text-light: #f5f5f5;
         }
-
-        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Inter', sans-serif; background: var(--emerald-void); color: var(--text-light); overflow: hidden; }
-
-        header {
-            position: fixed; top: 0; width: 100%; background: rgba(4, 26, 17, 0.9);
-            border-bottom: 2px solid var(--brass); z-index: 1000; box-shadow: 0 0 20px var(--aurora-glow);
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { height: 100%; font-family: 'Inter', sans-serif; background: var(--emerald-void); color: var(--text-light); overflow: hidden; }
+        header { position: fixed; top: 0; width: 100%; background: rgba(4, 26, 17, 0.95); border-bottom: 2px solid var(--brass); z-index: 1000; box-shadow: 0 0 20px var(--aurora-glow); }
         nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
         .logo { font-size: 1.5rem; font-weight: bold; color: var(--gold); text-decoration: none; letter-spacing: 2px; }
         .nav-links { list-style: none; display: flex; }
         .nav-links li { margin-left: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--aurora-purple); text-shadow: 0 0 10px var(--aurora-purple); }
-
-        .hero {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(2, 13, 8, 0.5), rgba(2, 13, 8, 0.8)), url('PHOTO-2025-05-31-21-22-36_2.jpg');
-            background-size: cover; background-position: center;
-        }
-
-        .hero h1 { font-size: 4rem; color: var(--gold); margin-bottom: 0.5rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
-        .hero p { font-size: 1.5rem; color: var(--text-light); border-top: 2px solid var(--brass); padding-top: 10px; }
+        .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 500; transition: 0.3s; border-bottom: 2px solid transparent; }
+        .nav-links a:hover { color: var(--aurora-purple); border-bottom: 2px solid var(--aurora-purple); }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(2, 13, 8, 0.4), rgba(2, 13, 8, 0.7)), url('PHOTO-2025-05-31-21-22-36_2.jpg'); background-size: cover; background-position: center; }
+        .hero h1 { font-size: 3.5rem; color: var(--gold); margin-bottom: 0.5rem; text-shadow: 0 0 15px rgba(0,0,0,0.9); }
+        .hero p { font-size: 1.3rem; max-width: 700px; padding: 0 1rem; color: var(--text-light); text-shadow: 0 0 10px rgba(0,0,0,0.9); }
     </style>
 </head>
 <body>
@@ -44,16 +33,16 @@
         <nav>
             <a href="index.html" class="logo">V. ZAPOLSKI</a>
             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="resume.html">Resume</a></li>
                 <li><a href="skills.html">Skills</a></li>
             </ul>
         </nav>
     </header>
-
     <div class="hero">
         <h1>Victor Władysław Zapolski</h1>
-        <p>The Browning School | Engineering & Chemistry | Multi-Instrumentalist</p>
+        <p>10th Grade Student @ The Browning School | Aspiring Pharmaceutical Chemist</p>
     </div>
 </body>
 </html>

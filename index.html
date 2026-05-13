@@ -3,46 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Władysław Zapolski | Home</title>
+    <title>Victor Władysław Zapolski | Portfolio</title>
     <style>
         :root {
-            --emerald-void: #020d08;
-            --deep-emerald: #041a11;
+            --dark-green: #0a2e1f;
+            --forest-green: #143d2c;
             --brass: #b5a642;
             --gold: #d4af37;
-            --aurora-purple: #7b2cbf;
-            --aurora-glow: rgba(123, 44, 191, 0.4);
+            --light-gold: #f4e1a1;
+            --slate-grey: #b0bec5;
             --text-light: #f5f5f5;
+            --accent-glow: rgba(212, 175, 55, 0.2);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body, html { height: 100%; font-family: 'Inter', sans-serif; background: var(--emerald-void); color: var(--text-light); overflow: hidden; }
-        header { position: fixed; top: 0; width: 100%; background: rgba(4, 26, 17, 0.95); border-bottom: 2px solid var(--brass); z-index: 1000; box-shadow: 0 0 20px var(--aurora-glow); }
-        nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--gold); text-decoration: none; letter-spacing: 2px; }
-        .nav-links { list-style: none; display: flex; }
-        .nav-links li { margin-left: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 500; transition: 0.3s; border-bottom: 2px solid transparent; }
-        .nav-links a:hover { color: var(--aurora-purple); border-bottom: 2px solid var(--aurora-purple); }
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(2, 13, 8, 0.4), rgba(2, 13, 8, 0.7)), url('PHOTO-2025-05-31-21-22-36_2.jpg'); background-size: cover; background-position: center; }
-        .hero h1 { font-size: 3.5rem; color: var(--gold); margin-bottom: 0.5rem; text-shadow: 0 0 15px rgba(0,0,0,0.9); }
-        .hero p { font-size: 1.3rem; max-width: 700px; padding: 0 1rem; color: var(--text-light); text-shadow: 0 0 10px rgba(0,0,0,0.9); }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background-color: var(--dark-green);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--forest-green);
+            border-bottom: 2px solid var(--brass);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 { font-size: 3rem; border-bottom: 1px solid var(--brass); display: inline-block; padding-bottom: 10px; }
+        h2 { font-size: 2rem; border-left: 4px solid var(--brass); padding-left: 15px; }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(10, 46, 31, 0.8), rgba(10, 46, 31, 0.8)), url('https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            border: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--slate-grey);
+            max-width: 600px;
+        }
+
+        .card {
+            background-color: var(--forest-green);
+            border: 1px solid var(--brass);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--accent-glow);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .resume-entry {
+            margin-bottom: 2rem;
+        }
+
+        .resume-entry h4 {
+            color: var(--light-gold);
+            font-size: 1.2rem;
+        }
+
+        .date {
+            font-style: italic;
+            color: var(--slate-grey);
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 3rem;
+            background-color: #051a11;
+            border-top: 1px solid var(--brass);
+            color: var(--slate-grey);
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Simplified for template */
+            h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+
     <header>
         <nav>
-            <a href="index.html" class="logo">V. ZAPOLSKI</a>
+            <a href="#home" class="logo">V. ZAPOLSKI</a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="skills.html">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#skills">Skills</a></li>
             </ul>
         </nav>
     </header>
-    <div class="hero">
+
+    <section id="home" class="hero">
         <h1>Victor Władysław Zapolski</h1>
-        <p>10th Grade Student @ The Browning School | Aspiring Pharmaceutical Chemist</p>
-    </div>
+        <p>Student @ The Browning School | Aspiring Pharmaceutical Chemist | Multi-Instrumentalist</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="card">
+            <p>
+                I am a 10th-grade student currently based in the New York area. My academic focus is primarily on Chemistry. 
+                Outside of the classroom, I play multiple instruments, specifically the piano and guitar. 
+                I am also a passionate athlete, competing in table tennis, alpine skiing, soccer, and tennis. 
+            </p>
+            <p style="margin-top: 1rem;">
+                I served as the captain of the Browning Table Tennis team, leading us to our first season win in history, 
+                and as co-captain of the tennis team. My long-term goal is to pursue a career in pharmaceutical chemistry, 
+                blending my love for science with the goal of creating impactful medical solutions.
+            </p>
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        
+        <h3>Education</h3>
+        <div class="card">
+            <div class="resume-entry">
+                <h4>The Browning School</h4>
+                <p class="date">High School Diploma Candidate | 2026 – Present</p>
+                <p>10th-grade focus on interdisciplinary studies and Chemistry Club.</p>
+            </div>
+            <div class="resume-entry">
+                <h4>Brooklyn Technical High School</h4>
+                <p class="date">9th Grade | 2024 – 2025</p>
+                <p>Foundational technical and engineering coursework at one of NYC's premier specialized schools.</p>
+            </div>
+            <div class="resume-entry">
+                <h4>East Side Middle School & PS-158</h4>
+                <p class="date">Middle & Elementary Education</p>
+            </div>
+        </div>
+
+        <h3>Projects & Research</h3>
+        <div class="card">
+            <div class="resume-entry">
+                <h4>MTA Subway Safety Retrofit Design</h4>
+                <p>Engineered a mechanical retrofit solution for existing MTA fleets using <strong>Fusion 360</strong>. Developed a Bill of Materials and strategic implementation timeline.</p>
+            </div>
+            <div class="resume-entry">
+                <h4>The AI Power Crunch: Nuclear Energy</h4>
+                <p>Authored a detailed policy narrative analyzing the energy demands of AI and the role of Small Modular Reactors (SMRs).</p>
+            </div>
+            <div class="resume-entry">
+                <h4>Judicial Analysis: Twitter v. Taamneh</h4>
+                <p>In-depth analysis of Supreme Court precedent regarding platform liability and constitutional law.</p>
+            </div>
+        </div>
+
+        <h3>Leadership & Involvement</h3>
+        <div class="card">
+            <div class="resume-entry">
+                <h4>Little Lights Non-Profit</h4>
+                <p>Leader and collaborator for a student music-based non-profit. Played piano for senior centers across NYC and managed promotional outreach.</p>
+            </div>
+            <div class="resume-entry">
+                <h4>Athletics Achievements</h4>
+                <ul>
+                    <li>Captain, Table Tennis Team (Browning) - Season Championship Winners</li>
+                    <li>2nd Place (2nd Doubles), PSAL Table Tennis League 2024-2025</li>
+                    <li>Alpine Skiing Competitive Racer</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <h3>Technical</h3>
+                <p>Fusion 360 (CAD)</p>
+                <p>Project Management (Gantt)</p>
+                <p>Technical Writing</p>
+            </div>
+            <div class="skill-item">
+                <h3>Academic</h3>
+                <p>Constitutional Law Analysis</p>
+                <p>Dimensional Analysis (Chem)</p>
+                <p>Advanced Math (Algebra II)</p>
+            </div>
+            <div class="skill-item">
+                <h3>Languages</h3>
+                <p>English (Fluent)</p>
+                <p>Polish (Fluent)</p>
+                <p>Spanish (Intermediate)</p>
+            </div>
+            <div class="skill-item">
+                <h3>Arts</h3>
+                <p>Piano (11 years)</p>
+                <p>Guitar Ensemble</p>
+                <p>Stage Performance</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Victor Władysław Zapolski</p>
+        <div class="contact-info">
+            <span>New York City, NY</span> | 
+            <a href="mailto:victorwzapolski@gmail.com">victorwzapolski@gmail.com</a> | 
+            <span>803-906-0503</span>
+        </div>
+    </footer>
+
 </body>
 </html>

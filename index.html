@@ -152,6 +152,21 @@
             font-size: 1.2rem;
         }
 
+        .video-wrapper {
+            margin-top: 1.5rem;
+            padding: 8px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
         .date {
             font-style: italic;
             color: var(--slate-grey);
@@ -266,6 +281,12 @@
                     <li>2nd Place (2nd Doubles), PSAL Table Tennis League 2024-2025</li>
                     <li>Alpine Skiing Competitive Racer</li>
                 </ul>
+            </div>
+            <div class="video-wrapper">
+                <video controls preload="metadata">
+                    <source src="Victor.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>

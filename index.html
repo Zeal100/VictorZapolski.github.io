@@ -132,15 +132,32 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr;
             gap: 1.5rem;
         }
 
         .skill-item {
-            background: rgba(255,255,255,0.05);
-            padding: 1rem;
-            border-radius: 5px;
-            border-left: 3px solid var(--gold);
+            background: rgba(255,255,255,0.08);
+            padding: 1.75rem;
+            border-radius: 12px;
+            border: 1px solid rgba(181, 166, 66, 0.35);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .skill-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        .skill-item p,
+        .skill-item li {
+            margin-bottom: 0.75rem;
+            color: var(--slate-grey);
+        }
+
+        .skill-item ul {
+            list-style: disc inside;
+            margin: 0.5rem 0 0 0;
+            padding-left: 1rem;
         }
 
         .resume-entry {
@@ -340,43 +357,35 @@
 
     <section id="skills">
         <h2>Skills</h2>
-        <div class="skills-grid skill-details">
-            <details>
-                <summary>Technical</summary>
-                <div class="skill-body">
-                    <p>Fusion 360 (CAD)</p>
-                    <p>Project Management (Gantt)</p>
-                    <p>Technical Writing</p>
-                    <p>Add videos, demos, and notes under this section.</p>
-                </div>
-            </details>
-            <details>
-                <summary>Academic</summary>
-                <div class="skill-body">
-                    <p>Constitutional Law Analysis</p>
-                    <p>Dimensional Analysis (Chem)</p>
-                    <p>Advanced Math (Algebra II)</p>
-                    <p>Add papers, lecture clips, and research links here.</p>
-                </div>
-            </details>
-            <details>
-                <summary>Languages</summary>
-                <div class="skill-body">
-                    <p>English (Fluent)</p>
-                    <p>Polish (Fluent)</p>
-                    <p>Spanish (Intermediate)</p>
-                    <p>Add speaking or study resources directly inside.</p>
-                </div>
-            </details>
-            <details>
-                <summary>Arts</summary>
-                <div class="skill-body">
-                    <p>Piano (11 years)</p>
-                    <p>Guitar Ensemble</p>
-                    <p>Stage Performance</p>
-                    <p>Embed music videos or performance clips here.</p>
-                </div>
-            </details>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <h3>Technical</h3>
+                <p>Fusion 360 (CAD)</p>
+                <p>Project Management (Gantt)</p>
+                <p>Technical Writing</p>
+                <p>Use this section to showcase technical demos, CAD video walkthroughs, or process notes.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Academic</h3>
+                <p>Constitutional Law Analysis</p>
+                <p>Dimensional Analysis (Chem)</p>
+                <p>Advanced Math (Algebra II)</p>
+                <p>Use this section for essays, research summaries, and academic video explanations.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Languages</h3>
+                <p>English (Fluent)</p>
+                <p>Polish (Fluent)</p>
+                <p>Spanish (Intermediate)</p>
+                <p>Use this section to add language clips, speaking practice, or cultural notes.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Arts</h3>
+                <p>Piano (11 years)</p>
+                <p>Guitar Ensemble</p>
+                <p>Stage Performance</p>
+                <p>Use this section to highlight performances, music videos, and creative work.</p>
+            </div>
         </div>
     </section>
 

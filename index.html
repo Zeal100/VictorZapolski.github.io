@@ -160,6 +160,57 @@
             padding-left: 1rem;
         }
 
+        .project-images {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-image {
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 0.5rem;
+        }
+
+        .project-image .frame {
+            padding: 8px;
+            background: rgba(212, 175, 55, 0.06);
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+            overflow: hidden;
+        }
+
+        .project-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .project-image h4 {
+            margin: 0.5rem 0 0.5rem 0;
+            color: var(--light-gold);
+            font-size: 1.05rem;
+        }
+
+        .project-image p {
+            margin: 0.5rem 0 0 0;
+            color: var(--slate-grey);
+            line-height: 1.5;
+        }
+
+        .project-image:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px var(--accent-glow);
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(181, 166, 66, 0.15);
+            margin: 1.5rem 0;
+        }
+
         .resume-entry {
             margin-bottom: 2rem;
         }
@@ -364,6 +415,33 @@
                 <p>Project Management (Gantt)</p>
                 <p>Technical Writing</p>
                 <p>Use this section to showcase technical demos, CAD video walkthroughs, or process notes.</p>
+                <p>In my engineering classes in Brooklyn Tech and Browning, I learned to CAD in programs Fusion 360 and Onshape.</p>
+                <div class="project-images">
+                    <div class="project-image">
+                        <h4>Automata Toy CAD</h4>
+                        <div class="frame">
+                            <img src="Automata Toy CAD project.png" alt="Automata Toy CAD project">
+                        </div>
+                        <p>This is my Automata Toy CAD project, which was for an assignment that required us to make a toy to be donated to children in need.</p>
+                    </div>
+                    <div class="project-image">
+                        <h4>Automata Toy (Built)</h4>
+                        <div class="frame">
+                            <img src="Real Automata.jpg" alt="Real Automata project">
+                        </div>
+                        <p>This is the real Automata project built from the CAD design.</p>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="project-images">
+                    <div class="project-image">
+                        <h4>Metro Solution CAD — Final</h4>
+                        <div class="frame">
+                            <img src="Metro Solution CAD FInal.png" alt="Metro Solution CAD final project">
+                        </div>
+                        <p>For my engineering final in Browning, we were required to solve a problem with a solution. The problem I decided to solve was the problem of subway surfing in NYC trains, which is very common among teens in the city. How I decided to solve it was to add an attachment for the old subway cars that many teens surf on. The barrier would prevent people from going through in between train cars.</p>
+                    </div>
+                </div>
             </div>
             <div class="skill-item">
                 <h3>Academic</h3>

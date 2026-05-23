@@ -221,11 +221,17 @@
         }
 
         .video-wrapper {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             padding: 8px;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(212, 175, 55, 0.06);
             border-radius: 12px;
             border: 2px solid var(--gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px var(--accent-glow);
         }
 
         .video-wrapper video {
@@ -233,6 +239,17 @@
             height: auto;
             border-radius: 8px;
             display: block;
+        }
+
+        .videos-grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .video-box h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--light-gold);
+            font-size: 1.05rem;
         }
 
         .date {
@@ -397,11 +414,28 @@
                     <li>Alpine Skiing Competitive Racer at Belleayre Mountain</li>
                 </ul>
             </div>
-            <div class="video-wrapper">
-                <video controls preload="metadata">
-                    <source src="Victor.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="videos-grid">
+                <div class="video-box">
+                    <h4>Alpine Skiing in Belleayre</h4>
+                    <div class="video-wrapper">
+                        <video controls preload="metadata">
+                            <source src="Victor.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <div class="video-box">
+                    <h4>First Place in U1300 PingPod Tournament</h4>
+                    <div class="video-wrapper">
+                        <video controls preload="metadata">
+                            <source src="Victor.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
